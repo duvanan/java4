@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thêm Category</title>
+</head>
+<body>
+<h2>Thêm mới Category</h2>
+
+<form th:action="@{/category/add}" th:object="${category}" method="post">
+    <label>ID:</label>
+    <input type="text" th:field="*{id}" required /> <br/><br/>
+
+    <label>Mã danh mục:</label>
+    <input type="text" th:field="*{categoryCode}" /> <br/><br/>
+
+    <label>Tên danh mục:</label>
+    <input type="text" th:field="*{categoryName}" /> <br/><br/>
+
+    <button type="submit">Thêm</button>
+</form>
+
+<br/>
+<a href="/category/hien-thi">Quay lại</a>
+
+</body>
+</html>

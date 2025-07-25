@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Category List</title>
+</head>
+<body>
+<h2>Danh sách Category</h2>
+
+<form action="/category/search" method="get">
+    Tên: <input type="text" name="keyword" />
+    <button type="submit">Search</button>
+</form>
+
+<br/>
+<a href="/category/view-add"><button>Thêm mới</button></a>
+
+<br/><br/>
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr>
+        <th>ID</th>
+        <th>Tên danh mục</th>
+        <th>Mã danh mục</th>
+        <th>Hành động</th>
+    </tr>
+    <tr th:each="cate : ${categories}">
+        <td th:text="${cate.id}">1</td>
+        <td th:text="${cate.categoryName}">Cate1</td>
+        <td th:text="${cate.categoryCode}">C01</td>
+        <td>
+            <a th:href="@{'/category/detail/' + ${cate.id}}">detail</a>
+            |
+            <a th:href="@{'/category/delete/' + ${cate.id}}"
+               onclick="return confirm('Bạn có chắc chắn muốn xóa?')">delete</a>
+            |
+            <a th:href="@{'/category/view-update/' + ${cate.id}}">update</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Chi tiết Category</title>
+</head>
+<body>
+<h2>Chi tiết Category</h2>
+
+<p><b>ID:</b> <span th:text="${category.id}"></span></p>
+<p><b>Mã danh mục:</b> <span th:text="${category.categoryCode}"></span></p>
+<p><b>Tên danh mục:</b> <span th:text="${category.categoryName}"></span></p>
+
+<br/>
+<a href="/category/hien-thi">Quay lại</a>
+
+</body>
+</html>
